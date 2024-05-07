@@ -24,5 +24,6 @@ func cycle():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#Instead of input lets try to use some animation thing
 	if Input.is_action_just_pressed("Cycle"):
 		cycle()	
