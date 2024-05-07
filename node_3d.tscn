@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsgk65t3mkwhd"]
+[gd_scene load_steps=5 format=3 uid="uid://c22s6r4q4r1ay"]
 
 [ext_resource type="PackedScene" uid="uid://c4lt188bc57xj" path="res://models/ArmTest.blend" id="1_p8l1b"]
-[ext_resource type="Script" path="res://models/ArmTest.gd" id="2_ccgdv"]
+[ext_resource type="Script" path="res://scripts/ArmTest.gd" id="2_olttx"]
+[ext_resource type="PackedScene" uid="uid://bmodktpfyur86" path="res://invObj.tscn" id="3_ehgpf"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6ate1"]
 size = Vector2(10, 10)
@@ -9,11 +10,11 @@ size = Vector2(10, 10)
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.892743, 0.450566, 0, -0.450566, 0.892743, 3.38472, 2.16711, 2.17293)
+transform = Transform3D(1, 0, 0, 0, 0.645777, 0.763526, 0, -0.763526, 0.645777, 3.38472, 8.76124, -0.708519)
 
 [node name="ArmTest" parent="." instance=ExtResource("1_p8l1b")]
 transform = Transform3D(0.69824, 0, -0.715863, 0, 1, 0, 0.715863, 0, 0.69824, -0.484495, -2.38419e-07, -5.53456)
-script = ExtResource("2_ccgdv")
+script = ExtResource("2_olttx")
 
 [node name="Skeleton3D" parent="ArmTest/Armature" index="0"]
 bones/0/rotation = Quaternion(-0.00461288, 0.0206805, -0.37325, 0.927489)
@@ -24,11 +25,18 @@ bones/3/rotation = Quaternion(-0.0113614, -0.0178853, 0.919761, 0.391906)
 [node name="Cylinder" parent="ArmTest/Armature/Skeleton3D" index="0"]
 transform = Transform3D(0.659871, 0.751379, 0, -0.751379, 0.659871, 0, 0, 0, 1, -3.40278, 3.31901, 0)
 
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="ArmTest/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.798795, -0.60015, 0.0418053, 0.600891, 0.799302, -0.00688129, -0.0292853, 0.0306172, 0.999102, 0.126095, 5.7001, 0.0339828)
+bone_name = "Hand"
+bone_idx = 2
+
+[node name="ItemSpot" parent="ArmTest/Armature/Skeleton3D/BoneAttachment3D" instance=ExtResource("3_ehgpf")]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.73253, 0, 0)
 mesh = SubResource("QuadMesh_6ate1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.00785395, 0.999969, 0, -0.999969, -0.00785395, 0, 13.316, -7.45058e-09)
+transform = Transform3D(1, 0, 0, 0, 0.64804, 0.761606, 0, -0.761606, 0.64804, -2.38419e-07, 13.0308, 2.72949)
 
 [editable path="ArmTest"]

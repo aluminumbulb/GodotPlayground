@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=3 format=3 uid="uid://iwjuxoen847w"]
+
+[ext_resource type="Script" path="res://scripts/ItemDescription.gd" id="1_nvh3i"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_xdo8j"]
+
+[resource]
+script = ExtResource("1_nvh3i")
+mesh = SubResource("PrismMesh_xdo8j")
+metadata/_editor_prop_ptr_mesh = null

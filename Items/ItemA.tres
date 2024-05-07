@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=3 format=3 uid="uid://dkdhpheck7fm"]
+
+[ext_resource type="Script" path="res://scripts/ItemDescription.gd" id="1_7ffsc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jo0v1"]
+
+[resource]
+script = ExtResource("1_7ffsc")
+mesh = SubResource("SphereMesh_jo0v1")
+metadata/_editor_prop_ptr_mesh = null

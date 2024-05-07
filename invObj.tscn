@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmodktpfyur86"]
+
+[ext_resource type="Script" path="res://scripts/InventoryItem.gd" id="1_wbngr"]
+[ext_resource type="Resource" uid="uid://dkdhpheck7fm" path="res://Items/ItemA.tres" id="2_egvp1"]
+[ext_resource type="Resource" uid="uid://iwjuxoen847w" path="res://Items/ItemB.tres" id="3_26mls"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qwk3u"]
+
+[node name="InventoryItem" type="Node3D"]
+script = ExtResource("1_wbngr")
+possible_items = Array[Resource("res://scripts/ItemDescription.gd")]([ExtResource("2_egvp1"), ExtResource("3_26mls")])
+
+[node name="objMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, -3.72529e-09, -2.32831e-09, -3.72529e-09, 1, 4, 3, 0)
+mesh = SubResource("BoxMesh_qwk3u")
