@@ -17,13 +17,8 @@ func _ready():
 
 #shifts to the next inventory slot
 func cycle():
+	print("cycling")
 	i=(i+1)%possible_items.size()
 	print(i)
 	curr_item = possible_items[i]
 	refresh(curr_item)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	#Instead of input lets try to use some animation thing
-	if Input.is_action_just_pressed("Cycle"):
-		cycle()	

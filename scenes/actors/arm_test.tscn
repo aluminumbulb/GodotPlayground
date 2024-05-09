@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://tpio7y68o6kj"]
+
+[ext_resource type="PackedScene" uid="uid://c4lt188bc57xj" path="res://models/ArmTest.blend" id="1_ovkoi"]
+[ext_resource type="Script" path="res://scripts/ArmTest.gd" id="2_1uluf"]
+[ext_resource type="PackedScene" uid="uid://bmodktpfyur86" path="res://scenes/actors/inventory_item.tscn" id="3_dow6b"]
+
+[node name="ArmTest" instance=ExtResource("1_ovkoi")]
+script = ExtResource("2_1uluf")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(-0.00461288, 0.0206805, -0.37325, 0.927489)
+bones/1/rotation = Quaternion(7.03902e-08, -4.39094e-08, 0.671081, 0.741384)
+bones/3/position = Vector3(-3.85754, 4.1978, 7.2196e-07)
+bones/3/rotation = Quaternion(-0.0113614, -0.0178853, 0.919761, 0.391906)
+
+[node name="InventoryItem" parent="Armature/Skeleton3D" index="1" instance=ExtResource("3_dow6b")]
+transform = Transform3D(0.798795, -0.60015, 0.0418053, 0.600891, 0.799302, -0.00688129, -0.0292853, 0.0306172, 0.999102, 0.126095, 5.7001, 0.0339828)
+bone_name = "Hand"
+bone_idx = 2
