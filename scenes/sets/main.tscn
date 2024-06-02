@@ -1,13 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba1t3p808av42"]
+[gd_scene load_steps=9 format=3 uid="uid://ba1t3p808av42"]
 
+[ext_resource type="Script" path="res://scenes/sets/player_input.gd" id="1_j76kb"]
 [ext_resource type="PackedScene" uid="uid://tpio7y68o6kj" path="res://scenes/actors/arm_test.tscn" id="1_xvpoi"]
+[ext_resource type="PackedScene" uid="uid://dircqhlwja77e" path="res://scenes/UI/BaseUI.tscn" id="2_ba0et"]
+[ext_resource type="Texture2D" uid="uid://c0nscxe1ptrfh" path="res://img/Open Chest.png" id="4_33vih"]
+[ext_resource type="Texture2D" uid="uid://c0chg3oge6xjd" path="res://img/Static Back and Alpha Test.png" id="5_v6jdp"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hrsuq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0no5e"]
+albedo_texture = ExtResource("4_33vih")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed0vm"]
+albedo_texture = ExtResource("5_v6jdp")
 
 [node name="main" type="Node3D"]
+transform = Transform3D(0.989663, 0, 0, 0, 0.989663, 0, 0, 0, 0.989663, 0, 0, 0)
+script = ExtResource("1_j76kb")
 
 [node name="ArmTest" parent="." instance=ExtResource("1_xvpoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.56865, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.094, 0, -4.465)
+transform = Transform3D(-4.41679e-08, 0, 1.01044, 0, 1.01044, 0, -1.01044, 0, -4.41679e-08, 10.094, 0, -4.465)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0277646, 0.999615, 0, -0.999615, 0.0277646, 0, 5.90575, 0)
+
+[node name="BaseUI" parent="." instance=ExtResource("2_ba0et")]
+
+[node name="ForeMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.15628e-07, 0, 4.933, 0, 10, 0, -4.933, 0, -2.15628e-07, 3.66808, 0.101618, -7.41223)
+mesh = SubResource("QuadMesh_hrsuq")
+surface_material_override/0 = SubResource("StandardMaterial3D_0no5e")
+
+[node name="ForeMesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.13448e-06, 0, 4.933, 0, 52.2811, 0, -48.8313, 0, -2.15628e-07, -3.65153, 0.101618, -2.11822)
+mesh = SubResource("QuadMesh_hrsuq")
+surface_material_override/0 = SubResource("StandardMaterial3D_ed0vm")

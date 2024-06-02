@@ -1,3 +1,61 @@
-[gd_scene format=3 uid="uid://dircqhlwja77e"]
+[gd_scene load_steps=2 format=3 uid="uid://dircqhlwja77e"]
+
+[ext_resource type="Script" path="res://scenes/UI/BaseUI.gd" id="1_dg8pn"]
 
 [node name="BaseUI" type="CanvasLayer"]
+script = ExtResource("1_dg8pn")
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="r_cycle_button" type="Button" parent="Screen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -148.0
+offset_right = -70.0
+offset_bottom = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "->"
+metadata/_edit_use_anchors_ = true
+
+[node name="l_cycle_button" type="Button" parent="Screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177083
+anchor_top = 1.00926
+anchor_right = 0.177083
+anchor_bottom = 1.00926
+offset_left = -165.0
+offset_top = -148.0
+offset_right = -70.0
+offset_bottom = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "<-"
+metadata/_edit_use_anchors_ = true
+
+[node name="desc_label" type="Label" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 293.0
+offset_top = 507.0
+offset_right = -304.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nothing Yet
+"
+horizontal_alignment = 1

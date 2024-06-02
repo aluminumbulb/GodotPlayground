@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="ItemDescription" load_steps=3 format=3 uid="uid://iwjuxoen847w"]
+[gd_resource type="Resource" script_class="ItemDescription" load_steps=4 format=3 uid="uid://iwjuxoen847w"]
 
 [ext_resource type="Script" path="res://scripts/ItemDescription.gd" id="1_nvh3i"]
+[ext_resource type="AudioStream" uid="uid://cqselw4mfvqre" path="res://sounds/pickupCoin.wav" id="2_af3tq"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_xdo8j"]
 
 [resource]
 script = ExtResource("1_nvh3i")
 mesh = SubResource("PrismMesh_xdo8j")
-metadata/_editor_prop_ptr_mesh = null
+sound = ExtResource("2_af3tq")
+description = "Wouldnt want to poke myself on this"
